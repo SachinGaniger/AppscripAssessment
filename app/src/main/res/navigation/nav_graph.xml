@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.sachin.appscripassessment.ui.fragments.SplashFragment"
+        android:label="SplashFragment" >
+        <action
+            android:id="@+id/action_splashFragment_to_nameFragment"
+            app:destination="@id/nameFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/nameFragment"
+        android:name="com.sachin.appscripassessment.ui.fragments.NameFragment"
+        android:label="NameFragment" >
+        <action
+            android:id="@+id/action_nameFragment_to_singleChoiceFragment"
+            app:destination="@id/singleChoiceFragment"
+
+            />
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/singleChoiceFragment"
+        android:name="com.sachin.appscripassessment.ui.fragments.SingleChoiceFragment"
+        android:label="SingleChoiceFragment" >
+        <action
+            android:id="@+id/action_singleChoiceFragment_to_multiChoiceFragment"
+            app:destination="@id/multiChoiceFragment" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="singleChoice"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/multiChoiceFragment"
+        android:name="com.sachin.appscripassessment.ui.fragments.MultiChoiceFragment"
+        android:label="MultiChoiceFragment" >
+        <action
+            android:id="@+id/action_multiChoiceFragment_to_summaryFragment"
+            app:destination="@id/summaryFragment" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="singleChoice"
+            app:argType="string" />
+        <argument
+            android:name="multiChoice"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/summaryFragment"
+        android:name="com.sachin.appscripassessment.ui.fragments.SummaryFragment"
+        android:label="SummaryFragment" >
+        <action
+            android:id="@+id/action_summaryFragment_to_historyFragment"
+            app:destination="@id/historyFragment" />
+        <action
+            android:id="@+id/action_summaryFragment_to_nameFragment"
+            app:destination="@id/nameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.sachin.appscripassessment.ui.fragments.HistoryFragment"
+        android:label="HistoryFragment" />
+</navigation>
